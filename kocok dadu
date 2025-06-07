@@ -1,0 +1,149 @@
+
+      diceArea.innerHTML = "";
+      totalValueDisplay.textContent = "0";
+
+      let total = 0;
+      let finished = 0;
+
+      for (let i = 0; i < count; i++) {<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dadu Bisa Diatur</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+    #dice {
+      font-size: 100px;
+      margin: 20px;
+      color: #2196f3;
+    }
+    input {
+      width: 50px;
+      font-size: 20px;
+      text-align: center;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dadu yang Bisa Diatur</h1>
+  <div id="dice">🎲</div>
+  <label for="customValue">Set angka (1–6):</label>
+  <input type="number" id="customValue" min="1" max="6" value="1">
+  <br>
+  <button onclick="rollDice()">Lempar Dadu</button>
+
+  <script>
+    function rollDice() {
+      const value = parseInt(document.getElementById("customValue").value);
+      const dice = document.getElementById("dice");
+
+      if (value < 1 || value > 6) {
+        alert("Masukkan angka antara 1 dan 6!");
+        return;
+      }
+
+      // Tampilkan angka sebagai emoji dadu
+      const diceFaces = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+      dice.textContent = diceFaces[value];
+    }
+  </script>
+</body>
+</html>04:58:38<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dadu Bisa Diatur</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+    #dice {
+      font-size: 100px;
+      margin: 20px;
+      color: #2196f3;
+    }
+    input {
+      width: 50px;
+      font-size: 20px;
+      text-align: center;
+    }
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Dadu yang Bisa Diatur</h1>
+  <div id="dice">🎲</div>
+  <label for="customValue">Set angka (1–6):</label>
+  <input type="number" id="customValue" min="1" max="6" value="1">
+  <br>
+  <button onclick="rollDice()">Lempar Dadu</button>
+
+  <script>
+    function rollDice() {
+      const value = parseInt(document.getElementById("customValue").value);
+      const dice = document.getElementById("dice");
+
+      if (value < 1 || value > 6) {
+        alert("Masukkan angka antara 1 dan 6!");
+        return;
+      }
+
+      // Tampilkan angka sebagai emoji dadu
+      const diceFaces = ["", "⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+      dice.textContent = diceFaces[value];
+    }
+  </script>
+</body>
+</html>
+        const wrapper = document.createElement("div");
+        wrapper.className = "wrapper";
+
+        const cube = document.createElement("div");
+        cube.className = "dice-3d";
+
+        const faces = ['front', 'back', 'left', 'right', 'top', 'bottom'];
+        for (let f = 0; f < 6; f++) {
+          const face = document.createElement("div");
+          face.className = `dice-face ${faces[f]}`;
+          face.textContent = (f + 1).toString();
+          cube.appendChild(face);
+        }
+
+        wrapper.appendChild(cube);
+        diceArea.appendChild(wrapper);
+
+        setTimeout(() => {
+          const result = values[i] - 1;
+          const angle = rotations[result];
+          cube.style.transform = `rotateX(${angle.x + 360}deg) rotateY(${angle.y + 360}deg)`;
+          total += result + 1;
+          finished++;
+
+          if (finished === count) {
+            totalValueDisplay.textContent = total;
+          }
+        }, 500 + i * 200);
+      }
+    });
+  </script>
+</body>
+</html>
